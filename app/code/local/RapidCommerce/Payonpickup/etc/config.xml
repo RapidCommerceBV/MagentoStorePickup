@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<RapidCommerce_Payonpickup>
+			<version>1.1.1</version>
+		</RapidCommerce_Payonpickup>
+	</modules>
+
+	<global>
+		<models>
+			<payonpickup>
+				<class>RapidCommerce_Payonpickup_Model</class>
+			</payonpickup>
+		</models>
+
+        <sales>
+            <shipping>
+                <rule>
+                    <conditions>
+                        <dest_country>
+                            <class>Mage_Sales_Model_Shipping_Rule_Condition_Dest_Country</class>
+                        </dest_country>
+                        <dest_region>
+                            <class>Mage_Sales_Model_Shipping_Rule_Condition_Dest_Region</class>
+                        </dest_region>
+                        <dest_zip>
+                            <class>Mage_Sales_Model_Shipping_Rule_Condition_Dest_Zip</class>
+                        </dest_zip>
+                        <package_weight>
+                            <class>Mage_Sales_Model_Shipping_Rule_Condition_Package_Weight</class>
+                        </package_weight>
+                        <order_subtotal>
+                            <class>Mage_Sales_Model_Shipping_Rule_Condition_Order_Subtotal</class>
+                        </order_subtotal>
+                        <order_totalqty>
+                            <class>Mage_Sales_Model_Shipping_Rule_Condition_Order_Totalqty</class>
+                        </order_totalqty>
+                    </conditions>
+                    <actions>
+                        <carrier>
+                            <class>Mage_Sales_Model_Shipping_Rule_Action_Carrier</class>
+                        </carrier>
+                        <method>
+                            <class>Mage_Sales_Model_Shipping_Rule_Action_Method</class>
+                        </method>
+                    </actions>
+                </rule>
+            </shipping>
+        </sales>
+	</global>
+	
+    <default>
+        <payment>
+            <payonpickup>
+                <active>0</active>
+				<model>payonpickup/payonpickup</model>
+                <order_status>pending</order_status>
+                <title>Pay on pickup</title>
+                <payment_action>sale</payment_action>
+                <allowspecific>0</allowspecific>
+            </payonpickup>
+         </payment>
+		 <carriers>
+			<payonpickup>
+				<active>0</active>
+				<sallowspecific>0</sallowspecific>
+				<model>payonpickup/storeforpickup</model>
+				<name>I will pick up the order at MYPICKUPADDRESS</name>
+				<price>0.00</price>
+				<title>Pick up order at store</title>
+				<type>I</type>
+				<specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+				<handling_type>F</handling_type>
+			</payonpickup>
+		 </carriers>
+    </default>
+	
+</config>

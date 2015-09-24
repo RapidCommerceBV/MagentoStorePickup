@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+        <modules>
+                <RapidCommerce_Payonpickup>
+                        <active>true</active>
+                        <codePool>local</codePool>
+                </RapidCommerce_Payonpickup>
+        </modules>
+</config>
